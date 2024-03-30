@@ -1,6 +1,6 @@
 ﻿using System.Threading.Channels;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 // Listeler dinamik bir yapıdır veri ekleyip çıkarabiliyoruz.
 
 // Jenerik argüman
@@ -91,4 +91,85 @@ List<int> ciftSayilar = new List<int>();
 //}
 
 
+
+
+// ********************************************
+
+// Dictionary (sözlük) key -> value *********
+
+// Elma 25
+
+Dictionary<string, double> manav = new Dictionary<string, double>();
+
+//manav.Add("Elma", 25);
+//manav.Add("Armut", 20);
+//manav.Add("Kiraz", 55);
+
+//Console.WriteLine(manav["Elma"]);
+
+//foreach (var item in manav)
+//{
+//    Console.WriteLine($"Ürün adı : {item.Key}, Ürünün değeri : {item.Value}");
+//}
+
+// Konsoldan kullanıcıdan kaç tane ürün gireceğini alıp sonrasında
+// manav sözlüğü içerisine o kadar ürün ekleyen
+// ürünü ekledikten sonra her ürünün %20 kdv si eklenerek hesaplayan
+// sonrasında tüm ürünleri ve kdvli fiyatı ekrana çıktı olarak veren kodu yazınız.
+
+
+//Dictionary<string, double> manav = new Dictionary<string, double>();
+//int urunSayisi;
+
+//Console.Write("Kaç tane ürün gireceksiniz?: ");
+//while (!int.TryParse(Console.ReadLine(), out urunSayisi) || urunSayisi <= 0)
+//{
+//    Console.WriteLine("Geçersiz giriş. Lütfen pozitif bir tamsayı girin.");
+//    Console.Write("Kaç tane ürün gireceksiniz?: ");
+//}
+
+//for (int i = 0; i < urunSayisi; i++)
+//{
+//    Console.Write($"Ürün adı {i + 1}: ");
+//    string urunAdi = Console.ReadLine();
+
+//    double urunFiyati;
+//    Console.Write($"Ürün fiyatı {i + 1}: ");
+//    while (!double.TryParse(Console.ReadLine(), out urunFiyati) || urunFiyati <= 0)
+//    {
+//        Console.WriteLine("Geçersiz giriş. Lütfen pozitif bir sayı girin.");
+//        Console.Write($"Ürün fiyatı {i + 1}: ");
+//    }
+
+//    manav.Add(urunAdi, urunFiyati);
+//}
+
+//Console.WriteLine("\nÜrünler ve KDV'li Fiyatları:");
+//foreach (var urun in manav)
+//{
+//    double kdvliFiyat = urun.Value * 1.20; // %20 KDV ekleniyor
+//    Console.WriteLine($"{urun.Key}: {urun.Value} TL - KDV'li Fiyat: {kdvliFiyat} TL");
+//}
+
+
+// Hocanın yaptığı
+
+Console.WriteLine("Kaç adet ürün girmek istersiniz?");
+int adet = Convert.ToInt32(Console.ReadLine());
+for(int i = 0; i < adet; i++)
+{
+    Console.WriteLine($"{i+1}. ürün adını giriniz : ");
+    string name = Console.ReadLine();
+
+    Console.WriteLine($"{name} ürünün değerini giriniz : ");
+    double price = Convert.ToDouble(Console.ReadLine());
+
+    double kdvli = price * 1.20;
+
+    manav.Add(name, kdvli);
+}
+foreach(var item in manav)
+{
+    Console.WriteLine($"Ürünün adı : {item.Key}, Ürünün değeri: {item.Value}");
+}
 
