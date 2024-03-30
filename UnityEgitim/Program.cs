@@ -337,3 +337,9 @@ switch (harf)
 Console.WriteLine($"Girdiğiniz harf {sonuc}.");
 
 // ders bitimi
+
+//-----------------------------------------
+
+// 2. Ders Başlangıcı
+
+
