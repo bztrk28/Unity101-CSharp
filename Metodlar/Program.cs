@@ -116,4 +116,3 @@ double NotHesapla(double vize, double final)
 }
 
 
-// Dairenin alanı
